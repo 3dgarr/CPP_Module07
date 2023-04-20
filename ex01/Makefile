@@ -4,10 +4,13 @@ SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
+%.o:%.cpp $(wildcard *.hpp)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CXX) $(OBJS) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 	@echo "$(GREEN)✅ Compiled!$(DEFAULT)"
 
 clean:

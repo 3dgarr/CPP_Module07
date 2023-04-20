@@ -1,5 +1,5 @@
 CXX = c++
-NAME = whatever
+NAME = array
 SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
